@@ -35,4 +35,4 @@ def process_links(page_name):
 	print(len(all_articles))
 
 
-[process_links(filename) for filename in os.listdir() if 'huff' in filename]
+process_links('npr_articles')

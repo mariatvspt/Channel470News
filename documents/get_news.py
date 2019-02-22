@@ -1,7 +1,7 @@
 import newspaper
 import json
 
-urls = {'la_times': 'https://www.latimes.com/', 'cbs': 'https://www.cbsnews.com/'}
+urls = {'abc': 'https://abcnews.go.com/', 'huffington': 'https://www.huffingtonpost.com/'}
 
 for name, url in urls.items():
 	cnn_paper = newspaper.build(url, memoize_articles=False)
