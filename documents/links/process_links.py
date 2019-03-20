@@ -23,7 +23,7 @@ def process_links(page_name):
 			t = a.publish_date
 			an_article["date"] = t.strftime('%m/%d/%Y')
 			an_article["url"] = a.url
-			an_article["text"] = a.summary
+			an_article["text"] = a.text
 
 			all_articles.append(an_article)
 
