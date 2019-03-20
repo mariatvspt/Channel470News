@@ -20,8 +20,10 @@ def process_links(page_name):
 			a.parse()
 			an_article = {}
 			an_article["source"] = "huffington"
+			t = a.publish_date
+			an_article["date"] = t.strftime('%m/%d/%Y')
 			an_article["url"] = a.url
-			an_article["text"] = a.text
+			an_article["text"] = a.summary
 
 			all_articles.append(an_article)
 
