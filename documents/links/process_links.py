@@ -7,7 +7,7 @@ def process_links(page_name):
 	with open(page_name) as f:
 	    content = f.readlines()
 
-	all_articles = {}
+	all_articles = []
 
 	counter = 0
 	i = len(content)
@@ -18,7 +18,12 @@ def process_links(page_name):
 			a = Article(url)
 			a.download()
 			a.parse()
-			all_articles[a.url] = a.text
+			an_article = {}
+			an_article["source"] = "huffington"
+			an_article["url"] = a.url
+			an_article["text"] = a.text
+
+			all_articles.append(an_article)
 
 			counter += 1
 			print('Downloading [%d/%d]\r' % (counter,i), end="")
@@ -35,4 +40,4 @@ def process_links(page_name):
 	print(len(all_articles))
 
 
-process_links('npr_articles')
+process_links('huff_republican')
